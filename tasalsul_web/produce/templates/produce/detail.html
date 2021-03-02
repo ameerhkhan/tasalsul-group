@@ -14,25 +14,17 @@
     </div>
 </header>
 
-<!-- About the product -->
-<div class="about" id="about">
-    <div class="container">
-        <h1 class="text-center">About Our {{ product.product_name }}</h1>
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <img src="{% static product.product_banner %}" class="img-fluid">
-                <!-- <span class="text-center">From the finest farms</span> -->
-            </div>
-            <div class="col-lg-8 col-md-8 col-sm-12 desc">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quasi tenetur fugit impedit officiis sed facilis neque consectetur et quis repudiandae, atque nihil tempora minus minima molestias delectus ea. Quo? Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit.
-                </p>
-            </div>
-        </div>
+<br>
+<br>
+<section class="aboutn">
+    <div class="imgBx" style="background: url('{% static product.product_banner %}');">
     </div>
-</div>
-
+    <div class="contentBx">
+        <h2 class="heading">About Our {{ product.product_name }}</h2>
+        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+    </div>
+</section>
+<br>
 <!-- Product Types. -->
 <h1 class="text-center">Product Types</h1>
 <div class="row">
