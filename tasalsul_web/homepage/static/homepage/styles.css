@@ -97,7 +97,7 @@ header .logo {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #5d6569;
+    background: #db1010;
     mix-blend-mode: overlay;
 }
 
@@ -586,7 +586,7 @@ header .logo {
 
 .contact {
     padding: 100px;
-    background: rgba(231, 4, 34, 0.671);
+    background: rgba(0, 0, 0, 0.856);
     text-align: center;
 }
 
@@ -598,10 +598,11 @@ header .logo {
 }
 
 .redbg {
-    background: url('/static/assets/red.jpg') !important;
+    /* background: url('/static/assets/red.jpg') !important; */
     background-size: cover;
     background-position: center;
-    width: 50%
+    width: 50%;
+    background-color: black !important;
 }
 
 .form .inputBx {
