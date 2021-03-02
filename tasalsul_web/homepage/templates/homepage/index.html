@@ -1,0 +1,178 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tasalsul | Home</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'homepage/styles.css' %}">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- <div class="banner"> -->
+    <section class="showcase">
+        <header>
+            <a href="#" class="logo">Tasalsul</a>
+            <div class="toggle"></div>
+        </header>
+        <video autoplay muted loop>
+            <source src="{% static 'assets/bg3.mp4' %}" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="text">
+            <h2>TASALSUL</h2>
+            <p>The sequence of TRUST</p>
+        </div>
+        <a class="freakybutton" href="{% url 'produce:index' %}">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span> Explore our Produce</a>
+        <!-- <a class="freakybutton2" href="#contact">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span> Contact Us</a> -->
+        <!-- </div> -->
+        <!-- </div> This was for the banner -->
+    </section>
+    <div class="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="{% url 'produce:index' %}">Produce</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="contentBx">
+            <h2 class="heading">About Us</h2>
+            <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. At recusandae suscipit vero quisquam ducimus ratione placeat voluptatum, dignissimos perferendis saepe! Impedit temporibus repellat a odio voluptas neque maxime esse consequuntur.<br><br>                Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt illo unde magni ipsam nisi dignissimos cupiditate enim hic id? Consectetur rem nostrum recusandae cupiditate praesentium facilis quo vero saepe quam!</p>
+        </div>
+        <div class="imgBx">
+
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <h2 class="heading">Our Services</h2>
+        <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti facilis autem, doloribus magni illum nam quas deserunt sint hic dolorem reprehenderit. Sint, aut! Ullam inventore ad, non nihil porro praesentium!</p>
+        <div class="container">
+            <div class="serviceBx">
+                <div>
+                    <img src="{% static 'assets/icon1.png' %}">
+                    <h2>Design</h2>
+                </div>
+            </div>
+            <div class="serviceBx">
+                <div>
+                    <img src="{% static 'assets/icon2.png' %}">
+                    <h2>Development</h2>
+                </div>
+            </div>
+            <div class="serviceBx">
+                <div>
+                    <img src="{% static 'assets/icon3.png' %}">
+                    <h2>Branding</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Technology -->
+    <section class="technology">
+        <div class="contentBx">
+            <h2 class="heading">We use cutting edge technology</h2>
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut repellendus a, fuga voluptatibus vitae, facilis nam iusto doloribus illum obcaecati consectetur accusantium nulla incidunt perferendis mollitia quidem dolores soluta. Porro!</p>
+        </div>
+        <div class="imgBx">
+            <img src="{% static 'assets/tech.png' %}">
+        </div>
+    </section>
+    <!-- CLIENTS -->
+    <section class="client">
+        <h2 class="heading">Our Clients</h2>
+        <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aspernatur laudantium recusandae voluptatem quod perferendis magni fuga. Architecto deserunt qui inventore amet harum excepturi ipsum sunt, quam dolor minima cum.</p>
+        <div class="imgBx">
+            <img src="{% static 'assets/brand1.png' %}">
+            <img src="{% static 'assets/brand2.png' %}">
+            <img src="{% static 'assets/brand3.png' %}">
+            <img src="{% static 'assets/brand4.png' %}">
+        </div>
+    </section>
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact Us!</h2>
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates et optio perferendis veritatis tenetur sunt facilis, suscipit rem sapiente delectus deserunt ratione reprehenderit adipisci eligendi aperiam obcaecati repellat minima. Tempore?</p>
+    </section>
+    <section class="about">
+        <div class="contentBx redbg">
+            <form method="POST">
+                <div class="form">
+                    {% csrf_token %}
+                    <div class="inputBx">
+                        {{ form.name.errors }}
+                        <label for="{{ form.name.id_for_label }}">Your Name</label> {{ form.name }}
+
+                    </div>
+                    <div class="inputBx">
+                        {{ form.from_email.errors }}
+                        <label for="{{ form.from_email.id_for_label }}">Email Address</label> {{ form.from_email }}
+
+                    </div>
+                    <div class="inputBx">
+                        {{ form.phone_number.errors }}
+                        <label for="{{ form.phone_number.id_for_label }}">Contact No.</label> {{ form.phone_number }}
+                    </div>
+                    <div class="inputBx">
+                        {{ form.message.errors}}
+                        <label for="{{ form.message.id_for_label }}">Your Message</label> {{ form.message }}
+                    </div>
+                    <div class="inputBx form-actions">
+                        <input type="submit" name="" value="Send">
+                        <!-- <button type="submit">Send</button> -->
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="imgBx2"></div>
+    </section>
+    <!-- Footer -->
+    <section class="footer">
+        <p class="text">Designed and Developed by Next Horizon</p>
+        <ul>
+            <p class="text">Follow Us on,</p>
+            <li>
+                <a href="#"><img src="{% static 'assets/facebook.png' %}"></a>
+            </li>
+            <li>
+                <a href="#"><img src="{% static 'assets/twitter.png' %}"></a>
+            </li>
+            <li>
+                <a href="#"><img src="{% static 'assets/linkedin.png' %}"></a>
+            </li>
+        </ul>
+    </section>
+    <!-- </div> -->
+    <button onclick="topFunction()" id="myBtn" title="Top">
+        <!-- <img src="{% static 'assets/up.svg' %}"> -->
+    </button>
+
+
+    <script src="{% static 'homepage/script.js' %}" async=defer></script>
+    <script src="{% static 'homepage/script_top.js' %}" async=defer></script>
+</body>
+
+</html>
