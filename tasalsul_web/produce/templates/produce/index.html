@@ -20,17 +20,18 @@
             <div class="card-img" style="background-image: url('{% static product.product_banner %}');">
                 <div class="overlay">
                     <div class="overlay-content">
+                        <p class="text">{{ product.product_name }}</p>
                     </div>
                 </div>
             </div>
         </a>
 
-        <div class="card-content">
+        <!-- <div class="card-content">
             <a href="{% url 'produce:detail' product.id %}">
                 <h2>{{ product.product_name }}</h2>
                 <p>{{ product.product_description }}</p>
             </a>
-        </div>
+        </div> -->
     </div>
     {% endfor %}
 </div>
