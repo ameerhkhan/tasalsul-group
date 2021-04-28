@@ -17,7 +17,7 @@
 <br>
 <br>
 <section class="aboutn">
-    <div class="imgBx" style="background: url('{% static product.product_banner %}');">
+    <div class="imgBx" style="background: url('{% static product.product_thumbnail %}');">
     </div>
     <div class="contentBx">
         <h2 class="heading">About Our {{ product.product_name }}</h2>
@@ -34,7 +34,7 @@
         <div class="card-img hover" style="background-image: url('{% static product_type.product_picture %}');">
             <div class="overlay">
                 <div class="overlay-content">
-                    <p> Grade: {{ product_type.product_grade }}</p>
+                    <p></p>
                 </div>
             </div>
         </div>
@@ -43,12 +43,50 @@
         <div class="card-content">
             <!-- <a href="#!"> -->
             <h2>{{ product_type.product_type }}</h2>
-            <p>Origin: {{ product_type.product_origin }}</p>
+            <p>Description will come here Use product origin...</p>
             <!-- </a> -->
         </div>
     </div>
     {% endfor %}
 </div>
+
+<h1 class="text-center">Product Packaging</h1>
+<div class="row">
+    <!-- The carousel will go here -->
+    {% if product.product_packaging %}
+    <!-- For loop by Django-->
+    {% for packaging in product.product_packaging_set.all %}
+    <div class="card hover">
+        <div class="card-img hover" style="background-image: url('{% static packaging.packaging_picture %}');">
+            <div class="overlay">
+                <div class="overlay-content">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        </a>
+
+        <div class="card-content">
+            <!-- <a href="#!"> -->
+            <h2>{{ packaging.packaging_name }}</h2>
+            <p>Description will come here Use product origin...</p>
+            <!-- </a> -->
+        </div>
+    </div>
+    {% endfor %} {% endif %}
+</div>
+
+
+<!-- # For the video and form.. -->
+<section class="aboutn">
+    <div class="imgBx" style="background: url('{% static product.product_thumbnail %}'); background-repeat: no-repeat;">
+    </div>
+    <!-- The form will go here -->
+    <div class="contentBx">
+        <h2 class="heading">About Our {{ product.product_name }}</h2>
+        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+    </div>
+</section>
 
 <!-- <p>This product has no types</p> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

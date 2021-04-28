@@ -48,8 +48,8 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 350px;
-    margin-top: -50px;
+    height: 500px;
+    margin-top: -500px;
     width: 100%;
 }
 
@@ -125,11 +125,11 @@ body {
 }
 
 .aboutn .imgBx {
-    /* background: url('/static/assets/about.jpg'); */
     width: 50%;
     background-size: cover;
     background-position: center;
     padding-right: 2px;
+    background-repeat: no-repeat;
 }
 
 

@@ -22,8 +22,23 @@
     <!-- <div class="banner"> -->
     <section class="showcase">
         <header>
-            <a href="#" class="logo">Tasalsul</a>
+            <!-- <a href="#" class="logo">Tasalsul</a> -->
+            <!-- New addition as for header as per requirement.. -->
+            <a href='#' class="logo"><img src="logo.png" alt="LOGO"></a>
             <div class="toggle"></div>
+            <ul class="navigation">
+                <li><a href="#about">About</a></li>
+                <!-- <li><a href="#services">Services</a></li> -->
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="{% url 'produce:index' %}">Fruits & Vegetables</a></li>
+                <li><a href="{% url 'produce:meat_index' %}">Meat</a></li>
+                <li><a href="{% url 'produce:salt_index' %}">Salts</a></li>
+                <li><a href="{% url 'produce:pulses_index' %}">Pulses</a></li>
+            </ul>
+            <div class="search">
+                <p>Contact: 03008166356 </p>
+                <!-- <!- <p>Email: </p> -> -->
+            </div>
         </header>
         <video autoplay muted loop>
             <source src="{% static 'assets/bg3.mp4' %}" type="video/mp4">
@@ -49,7 +64,9 @@
     <div class="menu">
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="{% url 'produce:index' %}">Produce</a></li>
+            <li><a href="{% url 'produce:index' %}">Fruits & Vegetables</a></li>
+            <li><a href="{% url 'produce:meat_index' %}">Meat</a></li>
+            <li><a href="{% url 'produce:salt_index' %}">Salts</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -59,7 +76,8 @@
     <section class="about" id="about">
         <div class="contentBx">
             <h2 class="heading">About Us</h2>
-            <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. At recusandae suscipit vero quisquam ducimus ratione placeat voluptatum, dignissimos perferendis saepe! Impedit temporibus repellat a odio voluptas neque maxime esse consequuntur.<br><br>                Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt illo unde magni ipsam nisi dignissimos cupiditate enim hic id? Consectetur rem nostrum recusandae cupiditate praesentium facilis quo vero saepe quam!</p>
+            <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. At recusandae suscipit vero quisquam ducimus ratione placeat voluptatum, dignissimos perferendis saepe! Impedit temporibus repellat a odio voluptas neque maxime esse consequuntur.<br><br>                Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt illo unde magni ipsam nisi dignissimos cupiditate enim hic id? Consectetur rem nostrum recusandae cupiditate praesentium facilis quo vero saepe quam! Some more bullshit.
+                Yes that is it. <br></p>
         </div>
         <div class="imgBx">
 
@@ -73,32 +91,33 @@
         <div class="container">
             <div class="serviceBx">
                 <div>
-                    <img src="{% static 'assets/icon1.png' %}">
-                    <h2>Design</h2>
+                    <img src="{% static 'assets/icon1.jpg' %}">
+                    <h2>Procure</h2>
                 </div>
             </div>
             <div class="serviceBx">
                 <div>
                     <img src="{% static 'assets/icon2.png' %}">
-                    <h2>Development</h2>
+                    <h2>Process</h2>
                 </div>
             </div>
             <div class="serviceBx">
                 <div>
                     <img src="{% static 'assets/icon3.png' %}">
-                    <h2>Branding</h2>
+                    <h2>Deliver</h2>
                 </div>
             </div>
         </div>
     </section>
     <!-- Technology -->
     <section class="technology">
+        <!-- <section class="about"> -->
         <div class="contentBx">
             <h2 class="heading">We use cutting edge technology</h2>
             <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut repellendus a, fuga voluptatibus vitae, facilis nam iusto doloribus illum obcaecati consectetur accusantium nulla incidunt perferendis mollitia quidem dolores soluta. Porro!</p>
         </div>
         <div class="imgBx">
-            <img src="{% static 'assets/tech.png' %}">
+            <img src="{% static 'assets/tech.jpg' %}">
         </div>
     </section>
     <!-- CLIENTS -->
@@ -106,10 +125,18 @@
         <h2 class="heading-magenta">Gallery</h2>
         <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         <div class="imgBx">
-            <img src="{% static 'assets/brand1.png' %}">
-            <img src="{% static 'assets/brand2.png' %}">
-            <img src="{% static 'assets/brand3.png' %}">
-            <img src="{% static 'assets/brand4.png' %}">
+            <img src="{% static 'assets/brand12.png' %}">
+            <img src="{% static 'assets/brand12.png' %}">
+            <img src="{% static 'assets/brand12.png' %}">
+            <img src="{% static 'assets/brand12.png' %}">
+            <img src="{% static 'assets/brand12.png' %}">
+            <img src="{% static 'assets/brand12.png' %}">
+            <img src="{% static 'assets/brand12.png' %}">
+            <img src="{% static 'assets/brand12.png' %}">
+            <img src="{% static 'assets/brand12.png' %}">
+            <!-- <img src="{% static 'assets/brand12.png' %}">
+            <img src="{% static 'assets/brand12.png' %}">
+            <img src="{% static 'assets/brand12.png' %}"> -->
         </div>
     </section>
     <!-- Contact -->
@@ -117,8 +144,8 @@
         <h2 class="heading">Contact Us!</h2>
         <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
     </section>
-    <section class="about">
-        <div class="contentBx redbg">
+    <section class="contactus">
+        <div class="contentBux redbg">
             <form method="POST">
                 <div class="form">
                     {% csrf_token %}
@@ -147,7 +174,7 @@
                 </div>
             </form>
         </div>
-        <div class="imgBx2"></div>
+        <div class="imgbox2"></div>
     </section>
     <!-- Footer -->
     <section class="footer">

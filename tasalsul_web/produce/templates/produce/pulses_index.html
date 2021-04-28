@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% load static %} {% block page_content %}
+<link rel="stylesheet" type="text/css" href="{% static 'display/styles.css' %}">
+
+<title>TASALSUL | Products | Pulses</title>
+<div class="banner">
+
+    <img src="{% static 'images/products_cover.jpg' %}">
+
+    <div class="content">
+        <!-- <h2>Our Produce</h2> -->
+        <!-- <p>Collected from the finest farms from all over the country.</p> -->
+    </div>
+</div>
+{% if all_pulses_categories %}
+<div class="row">
+    <!-- For loop by Django-->
+    {% for pulses in all_pulses_categories %}
+    <div class="card hover">
+        <a class="hover" href="{% url 'produce:pulses_detail' pulses.id %}">
+            <div class="card-img" style="background-image: url('{% static pulses.pulses_thumbnail %}');">
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <p class="text">{{ pulses.pulses_name }}</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <!-- <div class="card-content">
+            <a href="{% url 'produce:detail' product.id %}">
+                <h2>{{ product.product_name }}</h2>
+                <p>{{ product.product_description }}</p>
+            </a>
+        </div> -->
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<p>No products to Display at the moment!</p>
+{% endif %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{% static 'display/script.js' %}"></script>
+
+{% endblock %}

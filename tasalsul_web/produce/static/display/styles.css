@@ -57,7 +57,7 @@ body {
 }
 
 .card {
-    width: 300px;
+    width: 500px;
     display: inline-block;
     margin: 1rem;
     border-radius: 4px;
@@ -165,4 +165,5 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     color: rgba(32, 41, 28, 0.8);
+    visibility: visible;
 }

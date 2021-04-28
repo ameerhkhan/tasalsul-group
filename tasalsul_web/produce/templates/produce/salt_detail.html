@@ -1,0 +1,59 @@
+{% extends "base.html" %} {% load static %} {% block page_content %}
+<link rel="stylesheet" type="text/css" href="{% static '/detail/styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '/detail/styles2.css' %}">
+<title>TASALSUL | Produce | {{ salt.salt_class }}</title>
+<header class="parallax" style="background-image: url('{% static salt.salt_banner %}');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="description ">
+            <h1>
+                TASALSUL | {{ salt.salt_class }}
+                <p>{{ salt.salt_description }}</p>
+            </h1>
+        </div>
+    </div>
+</header>
+
+<br>
+<br>
+<section class="aboutn">
+    <div class="imgBx" style="background: url('{% static salt.salt_banner %}');">
+    </div>
+    <div class="contentBx">
+        <h2 class="heading">About Our {{ salt.salt_class }}</h2>
+        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+    </div>
+</section>
+<br>
+<!-- Product Types. -->
+<h1 class="text-center">Product Types</h1>
+<div class="row">
+    <!-- For loop by Django-->
+    {% for salt_type in salt.salt_products_set.all %}
+    <div class="card hover">
+        <div class="card-img hover" style="background-image: url('{% static salt_type.salt_type_picture %}');">
+            <div class="overlay">
+                <div class="overlay-content">
+                    <p> Origin: {{ salt_type.salt_origin }}</p>
+                </div>
+            </div>
+        </div>
+        </a>
+
+        <div class="card-content">
+            <!-- <a href="#!"> -->
+            <h2>{{ salt_type.salt_type }}</h2>
+            <!-- <p>Origin: {{ product_type.product_origin }}</p> -->
+            <!-- </a> -->
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- <p>This product has no types</p> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{% static 'detail/script.js' %}"></script>
+<script src="{% static 'detail/script2.js' %}"></script>
+
+
+{% endblock %}
