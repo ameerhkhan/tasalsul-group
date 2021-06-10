@@ -10,7 +10,7 @@ class Products_all(models.Model):
     product_name = models.CharField(max_length=30)
     product_price = models.IntegerField(default=0)
     price_date = models.DateTimeField('updated on')
-    product_picture = models.ImageField(upload_to='/images')
+    # product_picture = models.ImageField(upload_to='images')
     product_picture2 = models.FilePathField(path='/images')
 
     def __str__(self):

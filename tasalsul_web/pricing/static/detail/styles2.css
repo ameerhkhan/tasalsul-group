@@ -150,7 +150,7 @@ body {
 /* Addition */
 
 .card:hover .card-content:hover {
-    transform: translateY(-10px);
+    transform: translateY(-70px);
 }
 
 .card-content a {

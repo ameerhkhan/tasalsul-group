@@ -20,4 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('homepage/', include('homepage.urls')),
     path('produce/', include('produce.urls')),
+    # path('django_plotly_dash/', include('django_plotly_dash.urls')),
+    path('pricing/', include('pricing.urls')),
 ]

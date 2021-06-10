@@ -15,6 +15,14 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# New addition to PROJECT_ROOT and STATIC_ROOT to get rid of STATIC_ROOT Error.
+# You're using the staticfiles app without having set the STATIC_ROOT setting to a filesystem path.
+
+# PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__)) xx
+# STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')    xx
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
 STATICFILES_DIRS = (
     os.path.join(os.path.dirname(__file__), 'static').replace('\\','/'),
 )
@@ -42,16 +50,20 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'homepage.apps.HomepageConfig',
     'produce.apps.ProduceConfig',
+    'django_plotly_dash.apps.DjangoPlotlyDashConfig',
+    'pricing.apps.PricingConfig'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_plotly_dash.middleware.BaseMiddleware',
 ]
 
 ROOT_URLCONF = 'tasalsul_web.urls'
@@ -123,6 +135,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+# Commenting this out based on no internet connection..
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # New code according to stackoverflow
 

@@ -24,6 +24,8 @@ class Product_types(models.Model):
     product_origin = models.CharField(max_length=30)
     product_grade = models.CharField(max_length=10)
     product_picture = models.FilePathField(path="/produce/images/")   # holds a string but must point to a file path name.
+    
+
 
 
     def __str__(self):

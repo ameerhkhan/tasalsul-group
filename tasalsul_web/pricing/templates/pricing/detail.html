@@ -1,0 +1,54 @@
+{% extends "base.html" %} {% load static %} {% block page_content %}
+<link rel="stylesheet" type="text/css" href="{% static '/detail/styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '/detail/styles2.css' %}">
+<title>TASALSUL | Produce | {{ product.product_name }}</title>
+<header class="parallax" style="background-image: url('{% static product.product_picture %}');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="description ">
+            <h1>
+                TASALSUL | {{ product.product_name }}
+                <p>Latest Price: {{ product.product_price }}</p>
+                <p>Updated On: {{ product.price_date }}</p>
+            </h1>
+        </div>
+    </div>
+</header>
+
+<br>
+<br>
+<section class="aboutn">
+    <!-- <div class="imgBx" style="background: url('{% static product.product_thumbnail %}');"> -->
+    <!-- Maybe put the graph over here and then check? -->
+    <div class="imgBx">
+
+        {% if graph %} {{ graph|safe }} {% else %}
+        <p>No graph to display</p>
+        {% endif %}
+    </div>
+    <div class="contentBx">
+        <h2 class="heading">Price Graph for {{ product.product_name }}</h2>
+        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+    </div>
+</section>
+<br>
+
+
+<!-- # For the video and form.. -->
+<!-- <section class="aboutn">
+    <div class="imgBx" style="background: url('{% static product.product_thumbnail %}'); background-repeat: no-repeat;">
+    </div>
+    <!- The form will go here ->
+    <div class="contentBx">
+        <h2 class="heading">About Our {{ product.product_name }}</h2>
+        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+    </div>
+</section> -->
+
+<!-- <p>This product has no types</p> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{% static 'detail/script.js' %}"></script>
+<script src="{% static 'detail/script2.js' %}"></script>
+
+
+{% endblock %}

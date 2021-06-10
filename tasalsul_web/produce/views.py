@@ -10,6 +10,7 @@ from .models import Product, Product_types, Pulses, Salt, Salt_products, Meat, M
 class IndexView(generic.ListView):
     template_name = 'produce/index.html'
     context_object_name = 'latest_product_list'
+    # paginate_by = 15  # that is all it takes to add pagination in a Class Based View
 
     def get_queryset(self):
         return Product.objects.all()
