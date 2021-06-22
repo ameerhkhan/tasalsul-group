@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from django.http import Http404, HttpResponseRedirect
 from django.urls import reverse
 from django.views import generic
+from .forms import ContactProductForm
+from django.views.generic.edit import FormView
 
 
 from .models import Product, Product_types, Pulses, Salt, Salt_products, Meat, Meat_products, Pulses, Pulses_products
@@ -15,16 +17,21 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         return Product.objects.all()
 
-class DetailView(generic.DetailView):
+class DetailView(generic.DetailView, generic.FormView):
     model = Product
     template_name = 'produce/detail.html'
     # context_object_name = 'product_types_list'
+    form_class = ContactProductForm
+    succes_url = "produce/thanks/"
+
+    # https://docs.djangoproject.com/en/3.2/topics/class-based-views/generic-editing/
+    def form_valid(self, form):
+        form.send_email()
+        return super().form_valid(form)
 
     def get_queryset(self):
         return Product.objects.all()
 
-# Either create a new view for salt or put salt in the same index.html as above albeit with a different
-# heading.
 
 class SaltView(generic.ListView):
     template_name = 'produce/salt_index.html'

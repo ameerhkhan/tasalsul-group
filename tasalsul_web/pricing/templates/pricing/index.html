@@ -21,19 +21,19 @@
                 <div class="overlay">
                     <div class="overlay-content">
                         <p class="text">{{ product.product_name }}</p>
-                        <p class="text">{{ product.product_price }}</p>
-                        <p class="text">{{ product.price_date }}</p>
+
                     </div>
                 </div>
             </div>
         </a>
 
-        <!-- <div class="card-content">
-            <a href="{% url 'produce:detail' product.id %}">
+        <div class="card-content">
+            <a href="{% url 'pricing:detail' product.id %}">
                 <h2>{{ product.product_name }}</h2>
-                <p>{{ product.product_description }}</p>
+                <p class="text" style="font-weight: 500;">Price: {{ product.product_price }}</p>
+                <p class="text">Updated on: {{ product.price_date }}</p>
             </a>
-        </div> -->
+        </div>
     </div>
     {% endfor %}
 </div>

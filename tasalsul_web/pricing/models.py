@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-import pandas as pd
+# import pandas as pd
 
 import datetime
 # Create your models here.
@@ -17,4 +17,7 @@ class Products_all(models.Model):
         return self.product_name
 
     def was_updated_recently(self):
+        now = timezone.now()
         return self.price_date >= timezone.now() - datetime.timedelta(days=1)
+        # or
+        # return now - datetime.timedelta(days=1) <= self.pub_date <= now

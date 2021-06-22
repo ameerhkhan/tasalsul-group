@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% load static %} {% block page_content %}
+{% extends "base.html" %} {% load crispy_forms_tags %} {% load static %} {% block page_content %}
 <link rel="stylesheet" type="text/css" href="{% static '/detail/styles.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static '/detail/styles2.css' %}">
 <title>TASALSUL | Produce | {{ product.product_name }}</title>
@@ -21,7 +21,7 @@
     </div>
     <div class="contentBx">
         <h2 class="heading">About Our {{ product.product_name }}</h2>
-        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+        <p class="text"> </p>
     </div>
 </section>
 <br>
@@ -69,42 +69,63 @@
     </div>
     {% endfor %}
 </div>
-
+<!-- 
+Client asked carousel for packaging
+Taken from -> https://www.w3schools.com/bootstrap4/bootstrap_carousel.asp -->
 <h1 class="text-center">Product Packaging</h1>
+{% if product.product_packaging %}
 <div class="row">
     <!-- The carousel will go here -->
-    {% if product.product_packaging %}
-    <!-- For loop by Django-->
-    {% for packaging in product.product_packaging_set.all %}
-    <div class="card hover">
-        <div class="card-img hover" style="background-image: url('{% static packaging.packaging_picture %}');">
-            <div class="overlay">
-                <div class="overlay-content">
-                    <p></p>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ul class="carousel indicators">
+            {% for packaging in product.product_packaging_set.all %}
+            <li data-target="#demo" data-slide-to="{{ packaging.pk }}"></li>
+            {% endfor %}
+        </ul>
+        <!-- The slideshow -->
+        <div class="carousel inner">
+            {% for packaging in product.product_packaging_set.all %}
+            <div class="carousel-item">
+                <img src="{% static packaging.packaging_picture %}">
+                <div class="carousel-caption">
+                    <h2>{{ packaging.packaging_name }}</h2>
+                    <p>Great packaging according to customer needs.</p>
                 </div>
             </div>
+            {% endfor %}
         </div>
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
         </a>
-
-        <div class="card-content">
-            <!-- <a href="#!"> -->
-            <h2>{{ packaging.packaging_name }}</h2>
-            <p>Description will come here Use product origin...</p>
-            <!-- </a> -->
-        </div>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
     </div>
-    {% endfor %} {% endif %}
 </div>
+{% else %}
+<p>No packaging options to Display at the moment!</p>
+{% endif %}
 
-
+<br>
+<br>
 <!-- # For the video and form.. -->
+<h1 class="text-center">Get a Quote</h1>
 <section class="aboutn">
-    <div class="imgBx" style="background: url('{% static product.product_thumbnail %}'); background-repeat: no-repeat;">
-    </div>
+    <!-- <div class="imgBx" style="background: url('{% static product.product_thumbnail %}'); background-repeat: no-repeat;">
+    </div> -->
     <!-- The form will go here -->
-    <div class="contentBx">
-        <h2 class="heading">About Our {{ product.product_name }}</h2>
-        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <!-- <div class="contentBx"> -->
+    <div class="formbox">
+        <!-- <h2 class="heading">About Our {{ product.product_name }}</h2>
+        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p> -->
+
+        <form method="POST" id="contactProductForm" name="contactProductForm" class="contactProductForm">
+            {% csrf_token %} {{ form|crispy }}
+            <!-- <button type="submit">Submit</button> -->
+            <input type="submit" name="send" value="Send" class="form-control">
+        </form>
+
     </div>
 </section>
 

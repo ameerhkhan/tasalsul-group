@@ -17,9 +17,9 @@ html {
 }
 
 body {
-    padding: 0;
+    padding: 1rem 0;
+    background: #f9f9fb !important;
     margin: 0;
-    background: #f4f4f4;
     height: 100%;
     box-sizing: border-box;
 }
@@ -101,12 +101,22 @@ body {
     display: flex;
 }
 
+.aboutn .imgBx {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    padding-right: 2px;
+    background-repeat: no-repeat;
+}
+
 .aboutn .contentBx {
     background: inherit;
     padding: 100px;
-    width: 50%;
+    width: 100%;
     border-left: 20px solid rgba(255, 255, 255, 0.4);
     text-align: center;
+    /* right: 0;
+    padding-bottom: 500px; */
 }
 
 .heading {
@@ -124,61 +134,8 @@ body {
     letter-spacing: 1px;
 }
 
-.aboutn .imgBx {
-    width: 50%;
-    background-size: cover;
-    background-position: center;
-    padding-right: 2px;
-    background-repeat: no-repeat;
-}
-
 
 /* End Addition */
-
-.about {
-    margin: 2em 0;
-    padding: 1em;
-    position: relative;
-    width: 50%;
-}
-
-.about h1 {
-    color: #f7c736;
-    margin: 2em;
-}
-
-.about img {
-    /* /* height: 40%; */
-    width: 50%;
-    height: 300px;
-    border-radius: 0%;
-    background-size: cover;
-    background-position: center;
-}
-
-.about span {
-    display: block;
-    color: #888;
-    position: absolute;
-    left: 115px;
-}
-
-.about .desc {
-    padding: 2em;
-    border-left: 4px solid #5d0734;
-}
-
-.about .desc h3 {
-    color: #f7c736;
-}
-
-.about .desc p {
-    line-height: 2;
-    color: #888;
-}
-
-
-/* This is where it was changed and and was removed */
 
 @media (max-width: 768px) {
     .team .item img {
@@ -187,8 +144,12 @@ body {
     .aboutn {
         flex-direction: column;
     }
+    .aboutn .imgBx {
+        width: 100%;
+    }
     .aboutn .contentBx {
         width: 100%;
+        border-left: 1px;
     }
     .row {
         justify-content: center;

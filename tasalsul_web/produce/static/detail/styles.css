@@ -109,6 +109,14 @@ body {
     text-align: center;
 }
 
+.aboutn .formbox {
+    background: inherit;
+    padding: 100px;
+    width: 100%;
+    border-left: 20px solid rgba(255, 255, 255, 0.4);
+    text-align: center;
+}
+
 .heading {
     color: #f7c736;
     font-size: 30px;

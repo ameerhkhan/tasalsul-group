@@ -51,8 +51,11 @@ INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
     'produce.apps.ProduceConfig',
     'django_plotly_dash.apps.DjangoPlotlyDashConfig',
-    'pricing.apps.PricingConfig'
+    'pricing.apps.PricingConfig',
+    'crispy_forms',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -146,7 +149,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # For Email service.
 
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' # only for testing phase.
 # EMAIL_HOST = 'smtp.sendgrid.net' # IF YOU are using sendgrid.
 # EMAIL_HOST_USER = 'apikey'
 # EMAIL_HOST_PASSWORD = '<sendgrid_password>'
