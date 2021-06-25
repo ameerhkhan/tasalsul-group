@@ -25,45 +25,47 @@
     </div>
 </section>
 <br>
+
 <!-- Product Types. -->
 <h1 class="text-center">Product Types</h1>
 <div class="row">
     <!-- For loop by Django-->
     {% for product_type in product.product_types_set.all %}
+    <div id="showcasemodal{{product_type.id}}" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-xl">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">{{ product.product_name }} | {{ product_type.product_type }}</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>{{ product.product_description }}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
     <div class="card hover">
         <div class="card-img hover" style="background-image: url('{% static product_type.product_picture %}');">
             <div class="overlay">
                 <div class="overlay-content">
                     <!-- <p>Modal</p> -->
-                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">More Info</button>
-                    <div id="myModal" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Modal Header</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Some text in the modal.</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+                    <button type="button" style="background-color:rgb(0,0,0,0.1);border: 0px;" class="btn btn-lg" data-toggle="modal" data-target="#showcasemodal{{product_type.id}}">More Info</button>
                 </div>
             </div>
         </div>
-        </a>
+        <!-- </a> -->
 
         <div class="card-content">
             <!-- <a href="#!"> -->
             <h2>{{ product_type.product_type }}</h2>
-            <p>Description will come here Use product origin...</p>
+            <!-- <p>Description will come here Use product origin...</p> -->
             <!-- </a> -->
         </div>
     </div>
@@ -112,8 +114,8 @@ Taken from -> https://www.w3schools.com/bootstrap4/bootstrap_carousel.asp -->
 <!-- # For the video and form.. -->
 <h1 class="text-center">Get a Quote</h1>
 <section class="aboutn">
-    <!-- <div class="imgBx" style="background: url('{% static product.product_thumbnail %}'); background-repeat: no-repeat;">
-    </div> -->
+    <div class="imgBx" style="background: url('{% static product.product_thumbnail %}'); background-repeat: no-repeat;">
+    </div>
     <!-- The form will go here -->
     <!-- <div class="contentBx"> -->
     <div class="formbox">
@@ -121,9 +123,11 @@ Taken from -> https://www.w3schools.com/bootstrap4/bootstrap_carousel.asp -->
         <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p> -->
 
         <form method="POST" id="contactProductForm" name="contactProductForm" class="contactProductForm">
-            {% csrf_token %} {{ form|crispy }}
-            <!-- <button type="submit">Submit</button> -->
-            <input type="submit" name="send" value="Send" class="form-control">
+            {% csrf_token %}
+            <!-- {{ form|crispy }} -->
+            {% crispy form %}
+            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+            <!-- <input type="submit" name="submit" value="Submit" class="form-control"> -->
         </form>
 
     </div>

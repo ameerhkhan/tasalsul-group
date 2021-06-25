@@ -1,0 +1,85 @@
+{% extends "base.html" %} {% load static %} {% block page_content %}
+
+<!-- Everything will go in here now! -->
+<link rel="stylesheet" type="text/css" href="{% static 'homepage/services/styles.css' %}">
+<title>Synergy Engineering Consultants | About Us</title>
+<!-- Shift the image url to the css file -->
+
+<header class="parallax">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="description ">
+            <h1>
+                Synergy Engineering Consultants
+            </h1>
+            <p>We offer complete services in the following domains..</p>
+        </div>
+    </div>
+</header>
+<br>
+<section class="about" id="about">
+    <div class="content-box">
+        <h2 class="heading">Electrical Load Assessment</h2>
+        <p class="text">For High rises, Commercial/Residential buildings, Housing Societies, Industries, Museums, Libraries and all other types of commercial buildings/</p>
+    </div>
+    <div class="img-box">
+        <img src="{% static 'homepage/services/images/service1.jpg' %}"></img>
+    </div>
+</section>
+<br>
+<br>
+<section class="about" id="about">
+    <div class="img-box">
+        <img src="{% static 'homepage/services/images/service2.jpg' %}"></img>
+    </div>
+    <div class="content-box-right">
+        <h2 class="heading">Design & development of Electrical Distribution Network</h2>
+        <p class="text">Distribution networks spend heavily on investments and generation. It is only sensible that this power be used as efficiently as possible. We play our role in optimizing the efficiency and capital of our clients.</p>
+    </div>
+</section>
+<br>
+<br>
+<section class="about" id="about">
+    <div class="content-box">
+        <h2 class="heading">Energy Audit for efficient use of Electrical Energy </h2>
+        <p class="text">Energy Audit helps identify and consequently eliminate energy losses while also enhancing safety and efficiency of electrical equipment.</p>
+        <br>
+        <ul class="list-unstyled">
+            <li class="text">This service includes, </li>
+            <li class="text">Preliminary Energy Audit</li>
+            <li class="text">General Energy Audit</li>
+            <li class="text">Detailed Energy Audit</li>
+        </ul>
+    </div>
+    <div class="img-box">
+        <img src="{% static 'homepage/services/images/service3.jpg' %}"></img>
+    </div>
+</section>
+<br>
+<br>
+<section class="about" id="about">
+    <div class="img-box">
+        <img src="{% static 'homepage/services/images/service4.jpg' %}"></img>
+    </div>
+    <div class="content-box-right">
+        <h2 class="heading">Power Factor Improvement</h2>
+        <p class="text">Improving power factor means reducing the phase difference between voltage and current. This helps in reducing demand charges, improved voltage, reduce power losses as well as increased load carrying capacity in existing infrastructure.</p>
+    </div>
+</section>
+<br>
+<br>
+<section class="about" id="about">
+    <div class="content-box">
+        <h2 class="heading">Installation of Solar, Wind & Hybrid Energy Systems</h2>
+        <p class="text">Tailor-made alternate energy systems to meet any client's energy requirements.</p>
+    </div>
+    <div class="img-box">
+        <img src="{% static 'homepage/services/images/service5.jpg' %}"></img>
+    </div>
+</section>
+<br>
+<br>
+
+<script src="{% static 'homepage/services/script.js' %}" async defer></script>
+
+{% endblock %}

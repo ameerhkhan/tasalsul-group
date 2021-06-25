@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% load static %} {% block page_content %}
+
+<!-- Everything will go in here now! -->
+<link rel="stylesheet" type="text/css" href="{% static 'homepage/about/styles.css' %}">
+<title>Tasalsul | About Us</title>
+<!-- Shift the image url to the css file -->
+
+<header class="parallax">
+    <div class="overlay"></div>
+    <div class="container-a">
+        <div class="description ">
+            <h1>
+                Tasalsul
+                <p>A Sequence of Trust</p>
+                <!-- <button class="btn btn-outline-secondary btn-lg">See more</button> -->
+            </h1>
+        </div>
+    </div>
+</header>
+<br>
+<section class="about" id="about">
+    <div class="content-box">
+        <h2 class="heading">About Us</h2>
+        <p class="text">TASALSUL has been founded on the principle of providing Electrical Consultancy of the highest order to its clients. This company has been founded by Engr. Muhammad Idris Khan. A veteran in the field of Electrical Engineering with an experience
+            spanning more than 35 years of excellent service at K-Electric (formerly Karachi Electric Supply Corporation).
+        </p>
+    </div>
+    <div class="img-box">
+        <video src="{% static 'homepage/about/images/about-tile.mp4' %}" muted loop autoplay></video>
+    </div>
+</section>
+<br>
+<br>
+<section class="about" id="about">
+    <div class="img-box-d" id="img-d">
+        <img src="{% static 'homepage/about/images/profile_pic.png' %}">
+    </div>
+    <div class="cont-d" id="contd">
+        <h2 class="heading" style="font-size: 20px; align-items: center;">More</h2>
+        <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum laborum repudiandae incidunt officia ex ut totam non neque doloremque distinctio eveniet dolores corporis optio ipsam, laudantium iste temporibus saepe placeat.</p>
+    </div>
+</section>
+
+<script src="{% static 'homepage/about/script.js' %}" async defer></script>
+
+{% endblock %}

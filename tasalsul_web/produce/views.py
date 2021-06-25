@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import Http404, HttpResponseRedirect
 from django.urls import reverse
 from django.views import generic
-from .forms import ContactProductForm
+from .forms import ProductForm
 from django.views.generic.edit import FormView
 
 
@@ -21,8 +21,8 @@ class DetailView(generic.DetailView, generic.FormView):
     model = Product
     template_name = 'produce/detail.html'
     # context_object_name = 'product_types_list'
-    form_class = ContactProductForm
-    succes_url = "produce/thanks/"
+    form_class = ProductForm
+    succes_url = "produce"
 
     # https://docs.djangoproject.com/en/3.2/topics/class-based-views/generic-editing/
     def form_valid(self, form):

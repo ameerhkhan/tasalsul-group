@@ -129,6 +129,11 @@ body {
     text-decoration: none;
 }
 
+.card-img .overlay .overlay-content .btn {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 0px;
+}
+
 .card-img .overlay .overlay-content a:hover,
 .card-img .overlay .overlay-content a.hover {
     background: #f7c736;

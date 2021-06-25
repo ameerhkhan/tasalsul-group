@@ -454,6 +454,12 @@ body.hero-anime #switch {
     transition: all 200ms linear;
 }
 
+.dropdown-menu:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    /*remove the gap so it doesn't close*/
+}
+
 .dropdown-toggle::after {
     display: none;
 }
