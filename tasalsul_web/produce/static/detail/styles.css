@@ -140,6 +140,36 @@ body {
     background-repeat: no-repeat;
 }
 
+.modal-pict {
+    position: relative;
+    width: 100%;
+    display: flex;
+}
+
+.modal-pict .imagebox {
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-right: 2px;
+}
+
+.modal-pict .imagebox {
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-right: 2px;
+}
+
+.modal-pict .modal-text {
+    width: 50%;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
 
 /* End Addition */
 

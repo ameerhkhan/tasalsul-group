@@ -40,9 +40,18 @@
                     <h4 class="modal-title">{{ product.product_name }} | {{ product_type.product_type }}</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <div class="modal-body">
+                <!-- <div class="modal-body"> --
                     <p>{{ product.product_description }}</p>
-                </div>
+                </div> -->
+                <section class="aboutn">
+                    <div class="imgBx" style="background: url('{% static product_type.product_picture %}');">
+                    </div>
+                    <div class="contentBx">
+                        <h2 class="heading">{{ product_type.product_type }}</h2>
+                        <p class="text">{{ product.product_description }}</p>
+                        <!-- <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eos repudiandae, qui culpa praesentium expedita est facere porro optio mollitia ullam aperiam earum, totam, quod saepe dolorum non illo velit.</p> -->
+                    </div>
+                </section>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
